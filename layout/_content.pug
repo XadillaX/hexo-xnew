@@ -1,0 +1,39 @@
+if is_home()
+  each post in page.posts.toArray()
+    article.item
+      a.article(href= config.root + post.path)
+        h2= post.title
+      span.post-meta
+        | 写于
+        time= full_date(new Date(post.date), ' YYYY 年 MM 月 DD 日 HH 时 mm 分')
+      if post.description
+        p.post-excerpt= post.description
+      else if post.excerpt
+        p.post-excerpt= strip_html(post.excerpt).replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 140)
+      else
+        p.post-excerpt= strip_html(post.content).replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 140)
+  div.pagination
+    != paginator({ prev_text: "«", next_text: "»" })
+  footer
+    include _footer.pug
+
+if is_page() && page.title.toLowerCase() == 'archives'
+else if is_page()
+else if is_post()
+  article.full
+    h1= page.title
+    span.post-meta
+      | 写于
+      time= full_date(new Date(page.date), ' YYYY 年 MM 月 DD 日 HH 时 mm 分')
+      if page.updated
+        br
+        | 更新于
+        time= full_date(new Date(page.updated), ' YYYY 年 MM 月 DD 日 HH 时 mm 分')
+    div.article-toc
+      strong 大纲
+      != toc(page.content)
+    != page.content
+
+
+
+

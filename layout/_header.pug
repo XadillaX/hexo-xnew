@@ -1,0 +1,11 @@
+if theme.logo
+  a(href= config.root)
+    img.logo(src= theme.logo, alt= config.title, title= config.title)
+h1
+  a(href= config.root, alt= config.title, title= config.title)= config.title
+p!= config.subtitle
+nav
+  ul
+    each url, label in theme.menu
+      li
+        a(href= url, alt= label, title= label)= label

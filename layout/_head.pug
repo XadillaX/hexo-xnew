@@ -1,0 +1,42 @@
+-
+    var title = page.title;
+    if(is_archive()) {
+        title = "Archives";
+        if(is_month()) {
+            title += ": " + page.year + "/" + page.month;
+        } else if(is_year()) {
+            title += ": " + page.year;
+        }
+    } else if(is_category()) {
+        title = "Category: " + page.category;
+    } else if(is_tag()) {
+        title = "Tag: " + page.tag;
+    }
+
+if config.author
+  meta(name="author" content=config.author)
+
+if page.description
+  meta(name="description" itemprop="description" content=page.description)
+else if config.description && !is_post()
+  meta(name="description" itemprop="description" content=config.description)
+else if page.excerpt
+  meta(name="description" itemprop="description" content=strip_html(page.excerpt).replace(/^\s*/, '').replace(/\s*$/, ''))
+else if page.content
+  meta(name="description" itemprop="description" content=strip_html(page.content).replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 150))
+
+if page.keywords
+  meta(name="keywords" content=page.keywords)
+
+if theme.rss
+  link(rel="alternative" href=theme.rss title=config.title type="application/atom+xml")
+if theme.favicon
+  link(rel="icon" href=config.root + theme.favicon)
+
+meta(charset="utf-8")
+meta(http-equiv="X-UA-Compatible" content="IE=edge")
+meta(name="viewport" content="width=device-width, initial-scale=1")
+title= (title ? title : config.title) + (config.subtitle ? " · " + config.subtitle : "")
+
+link(rel="stylesheet" href="//cdn.bootcss.com/Han/3.3.0/han.min.css")
+link(rel='stylesheet', type='text/css', href= config.root + 'styles/screen.css')
