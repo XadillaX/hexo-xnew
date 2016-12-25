@@ -2,7 +2,7 @@ if is_home()
   each post in page.posts.toArray()
     article.item
       a.article(href= config.root + post.path)
-        h2= post.title
+        h2.home-title= post.title
       span.post-meta
         | 写于
         time= full_date(new Date(post.date), ' YYYY 年 MM 月 DD 日 HH 时 mm 分')
@@ -33,7 +33,3 @@ else if is_post()
       strong 大纲
       != toc(page.content)
     != page.content
-
-
-
-
