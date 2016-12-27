@@ -65,11 +65,14 @@ main
       transition color .3s ease
       color $body-link-hover-color
   .article-toc
+    box-sizing border-box
+    max-width 100%
     float right
     border-radius 15px
     border 1px solid #d3d3d3
     padding 2rem
     margin-left 20px
+    display none
     ol
       list-style none
       list-style-position inside
@@ -102,3 +105,5 @@ main
     main
       flex 2
       padding 40px
+      .article-toc
+        display block
