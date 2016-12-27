@@ -8,7 +8,8 @@ script.
 
         $("figure.highlight").each(function(i, block) {
             $(block).removeClass("highlight");
-            $("<pre><code class='__tobehl " + ($(block).attr("class") === "plain" ? "" : $(block).attr("class")) + "'>" + (block.innerText || block.textContent) + "</code></pre>").insertAfter($(block));
+            $("<pre><code class='__tobehl " + ($(block).attr("class") === "plain" ? "" : $(block).attr("class")) + "'></code></pre>").insertAfter($(block));
+            $(block).next().find("code").text((block.innerText || block.textContent));
             $(block).remove();
         });
         $(".__tobehl").each(function(i, block) {
