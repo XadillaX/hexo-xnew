@@ -28,7 +28,6 @@ main
   article.item
     border-bottom 1px solid hsla(0, 0, 0, .15)
     color $body-color
-    padding 40px
     h2
       break-word normal
       color $body-color
@@ -49,7 +48,7 @@ main
       height 7px
       border darken($background-color, 12%) 1px solid
       position relative
-      top 45px
+      top 5px
       left 50%
       margin-left -5px
       background darken($background-color, 15%)
@@ -105,5 +104,9 @@ main
     main
       flex 2
       padding 40px
+      article.item
+        padding 40px
+        &:after
+          top 45px
       .article-toc
         display block

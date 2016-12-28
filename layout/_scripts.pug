@@ -17,6 +17,10 @@ script.
         });
 
         $("article.full img").each(function() {
-          $(this).parent().css("text-align", "center");
+            $(this).parent().css("text-align", "center");
         });
+
+        if($(".article-toc").children().length < 2) {
+            $(".article-toc").css("display", "none");
+        }
     });
