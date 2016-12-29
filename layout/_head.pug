@@ -28,8 +28,8 @@ else if page.content
 if page.keywords
   meta(name="keywords" content=page.keywords)
 
-if theme.rss
-  link(rel="alternative" href=theme.rss title=config.title type="application/atom+xml")
+if config.feed && config.feed.type === "atom"
+  link(rel="alternative" href= config.root + config.feed.path title=config.title type="application/atom+xml")
 if theme.favicon
   link(rel="icon" href=config.root + theme.favicon)
 
