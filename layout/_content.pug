@@ -59,7 +59,7 @@ else if is_page()
       != toc(page.content)
     != page.content
     hr
-    if theme.duoshuo
+    if theme.disqus
       include _comment.pug
     footer
       include _footer.pug
@@ -78,7 +78,7 @@ else if is_post()
       != toc(page.content)
     != page.content
     hr
-    if theme.duoshuo
+    if theme.disqus
       include _comment.pug
     footer
       include _footer.pug
