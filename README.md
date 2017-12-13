@@ -23,9 +23,9 @@ title: 归档
 
 If you want to create some single page, just create `PAGE_URI_ROUTE/index.md` and add the link to `_config.yml`.
 
-### Duoshuo
+### Disqus
 
-Leave it blank if you don't have [Duoshuo](http://duoshuo.com) account. Otherwise, replace `duoshuo short_name` in `_config.yml`.
+Leave it blank if you don't have [Disqus](https://disqus.com) account. Otherwise, replace `disqus short_name` in `_config.yml`.
 
 ### Social Network
 

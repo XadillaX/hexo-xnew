@@ -2,7 +2,7 @@ section.comment
   div#disqus_thread
 
 script!= "var DISQUS_PAGE_URL = \"" +  config.url + config.root + page.path + "\";"
-script!= "var DISQUS_IDENTIFIER = \"" + page.slug + "\";"
+script!= "var DISQUS_IDENTIFIER = \"" + page.path + "\";"
 script!= "var DISQUS_SHORT_NAME = \"" + theme.disqus["short_name"] + "\""
 script.
   var disqus_config = function() {
