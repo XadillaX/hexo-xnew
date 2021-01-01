@@ -8,6 +8,7 @@ script.
 
         $("figure.highlight").each(function(i, block) {
             $(block).removeClass("highlight");
+            $(block).find("td.gutter").remove();
             $("<pre><code class='__tobehl " + ($(block).attr("class") === "plain" ? "" : ("lang-" + $(block).attr("class"))) + "'></code></pre>").insertAfter($(block));
             $(block).next().find("code").text((block.innerText || block.textContent));
             $(block).remove();
@@ -17,7 +18,11 @@ script.
         });
 
         $("article.full img").each(function() {
-            $(this).parent().css("text-align", "center");
+            if($(this).parent().is("article")) {
+                $(this).wrap("<p style='text-align: center;'></p>");
+            } else {
+                $(this).parent().css("text-align", "center");
+            }
         });
 
         if($(".article-toc").children().length < 2) {
