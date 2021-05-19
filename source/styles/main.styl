@@ -25,6 +25,17 @@ main
     display inline-block
     margin 0
     font-size 0.6em
+  article.item, article.full
+    p, li, blockquote
+      font-family: '喜鹊聚珍体', $cu-font-family;
+    strong
+      font-family: '喜鹊聚珍体', $cu-font-family !important;
+  article
+    h1, h2, h3, h4, h5, h6, h7
+      font-family: '喜鹊招牌体', $cu-font-family;
+      font-weight: normal;
+  article blockquote
+    font-family: '喜鹊聚珍体', $cu-font-family;
   article.item
     border-bottom 1px solid hsla(0, 0, 0, .15)
     color $body-color
@@ -98,6 +109,7 @@ main
       font-weight 500
     .intro
       font-size 0.7em
+      font-family: '喜鹊聚珍体', $cu-font-family;
 
 @media (min-width 720px)
   body
