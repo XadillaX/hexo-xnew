@@ -1,11 +1,8 @@
 script(src='https://cdn.staticfile.net/Han/3.3.0/han.min.js')
 script(src='https://cdn.staticfile.net/jquery/3.1.1/jquery.min.js')
-script(src='https://cdn.staticfile.net/jquery-backstretch/2.0.4/jquery.backstretch.min.js')
 script(src= config.root + 'scripts/highlight.pack.js')
 script.
     $(function() {
-        $("header").backstretch("/images/header.jpeg");
-
         $("figure.highlight").each(function(i, block) {
             $(block).removeClass("highlight");
             $(block).find("td.gutter").remove();

@@ -38,6 +38,7 @@ meta(http-equiv="X-UA-Compatible" content="IE=edge")
 meta(name="viewport" content="width=device-width, initial-scale=1")
 title= (title ? title : config.title) + (config.subtitle ? " · " + config.subtitle : "")
 
+link(rel="preload" as="image" href= config.root + "images/header.jpeg")
 link(rel="stylesheet" type="text/css" href= config.root + "font/fantasque_sans_mono/stylesheet.css")
 link(rel="stylesheet" type="text/css" href="https://cdn.staticfile.net/webicons/2.0.0/webicons.min.css")
 link(rel="stylesheet" type="text/css" href="https://cdn.staticfile.net/Han/3.3.0/han.min.css")
